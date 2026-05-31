@@ -1,0 +1,62 @@
+{
+  "name": "chord-weaver",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.33.4",
+  "engines": {
+    "node": ">=22.22.3",
+    "pnpm": ">=10.33.4"
+  },
+  "description": "Convert songs to chords and chords to audio — a bidirectional music notation tool",
+  "scripts": {
+    "dev": "next dev --turbopack --port 3025",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml}\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:e2e": "playwright test",
+    "run-all-checks": "pnpm typecheck && pnpm lint && pnpm test && pnpm build",
+    "check-encoding": "node scripts/check-encoding.ps1",
+    "fix-encoding": "node scripts/fix-encoding.ps1"
+  },
+  "dependencies": {
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "zod": "^4.4.3",
+    "server-only": "^0.0.1",
+    "class-variance-authority": "^0.7.1",
+    "tailwind-merge": "^3.6.0",
+    "lucide-react": "^0.562.0",
+    "date-fns": "^4.4.0",
+    "@supabase/ssr": "^0.10.3",
+    "@supabase/supabase-js": "^2.106.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@playwright/test": "^1.57.0",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/node": "^22.19.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.2.6",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.26",
+    "prettier": "^3.7.4",
+    "prettier-plugin-tailwindcss": "^0.7.4",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.49.0",
+    "vitest": "^4.0.16",
+    "jsdom": "^29.1.1"
+  }
+}
