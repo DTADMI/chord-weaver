@@ -29,10 +29,14 @@ export function I18nProvider({
     setLocaleState(next);
     try {
       localStorage.setItem(i18nConfig.storageKey, next);
-    } catch {}
+    } catch {
+      // localStorage unavailable (SSR or private browsing)
+    }
     try {
       document.cookie = `${i18nConfig.cookieName}=${next};path=/;max-age=31536000`;
-    } catch {}
+    } catch {
+      // cookie unavailable (SSR)
+    }
   }, []);
 
   const t = useCallback(
