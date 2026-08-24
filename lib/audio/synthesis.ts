@@ -5,8 +5,8 @@ const A4 = 440;
 
 function noteToFrequency(note: NoteName, octave = 4): number {
   const noteSemitones: Record<string, number> = {
-    C: -9, "C": -8, D: -7, "D": -6, E: -5,
-    F: -4, "F": -3, G: -2, "G": -1, A: 0, "A": 1, B: 2,
+    C: -9, "C#": -8, D: -7, "D#": -6, E: -5,
+    F: -4, "F#": -3, G: -2, "G#": -1, A: 0, "A#": 1, B: 2,
   };
   const semitones = (noteSemitones[note] ?? 0) + (octave - 4) * 12;
   return A4 * Math.pow(2, semitones / 12);

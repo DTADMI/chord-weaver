@@ -44,7 +44,7 @@ export function useSoundFont(): SoundFontPlayer {
 
   const stop = useCallback(() => {
     for (const osc of currentOscillatorsRef.current) {
-      try { osc.stop(); } catch {}
+      try { osc.stop(); } catch { /* oscillator already stopped */ }
     }
     currentOscillatorsRef.current = [];
     setIsPlaying(false);
@@ -52,9 +52,8 @@ export function useSoundFont(): SoundFontPlayer {
 
   const noteToFrequency = useCallback((note: string): number => {
     const noteMap: Record<string, number> = {
-      C: 261.63, "C": 277.18, D: 293.66, "D": 311.13,
-      E: 329.63, F: 349.23, "F": 369.99, G: 392.00,
-      "G": 415.30, A: 440.00, "A": 466.16, B: 493.88,
+      C: 261.63, "C#": 277.18, D: 293.66, "D#": 311.13,
+      E: 329.63, F: 349.23, "F#": 369.99, G: 392.00, "G#": 415.30, A: 440.00, "A#": 466.16, B: 493.88,
     };
     return noteMap[note] ?? 440;
   }, []);

@@ -1,4 +1,5 @@
 import type { ChordSheet, Chord } from "@/lib/chords/types";
+import { chordToString } from "@/lib/chords/database";
 
 export function parseAbcNotation(abc: string): ChordSheet | null {
   try {
@@ -15,7 +16,7 @@ export function parseAbcNotation(abc: string): ChordSheet | null {
     const tempo = tempoMatch ? parseInt(tempoMatch[1]) : 120;
 
     const body = abc.split(/\n/).filter((l) => !l.match(/^[A-Z]:/)).join(" ");
-    const chordMatches = body.match(/\"([A-Z][#b]?[mM]?\d*[a-zA-Z]?)\"/g) ?? [];
+    const chordMatches = body.match(/"([A-Z][#b]?[mM]?\d*[a-zA-Z]?)"/g) ?? [];
     const chords: Chord[] = chordMatches.map((c, i) => ({
       root: (c.replace(/"/g, "").charAt(0).toUpperCase() + c.replace(/"/g, "").slice(1)) as Chord["root"],
       quality: "maj",
@@ -41,7 +42,6 @@ export function parseAbcNotation(abc: string): ChordSheet | null {
 }
 
 export function toAbcNotation(sheet: ChordSheet): string {
-  const { default: chordToString } = require("@/lib/chords/database");
   const key = sheet.progression.key;
   const timeSig = sheet.progression.timeSignature;
   const tempo = sheet.progression.tempo;

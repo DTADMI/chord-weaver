@@ -17,7 +17,7 @@ export function generateVexFlowCode(sheet: ChordSheet, options?: Partial<RenderO
   };
 
   const chords = sheet.progression.chords;
-  const chordStrings = chords.map((c) => `"${chordToString(c)}"`).join(", ");
+  const chordStrings = chords.map((c: Chord) => chordToString(c));
 
   return `
     const { Factory } = Vex.Flow;
@@ -26,7 +26,7 @@ export function generateVexFlowCode(sheet: ChordSheet, options?: Partial<RenderO
     const system = vf.System();
 
     const notes = [
-      ${chordStrings.map((c, i) => `score.voice(score.notes('${c}/q', { stem: 'up' }))`).join(",\n      ")}
+      ${chordStrings.map((c: string, i: number) => `score.voice(score.notes('${c}/q', { stem: 'up' }))`).join(",\n      ")}
     ];
 
     system.addStave({ voices: notes }).addClef('treble').addTimeSignature('${sheet.progression.timeSignature[0]}/${sheet.progression.timeSignature[1]}');

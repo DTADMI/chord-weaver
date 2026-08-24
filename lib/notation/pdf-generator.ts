@@ -1,4 +1,5 @@
 import type { ChordSheet } from "@/lib/chords/types";
+import { chordToString } from "@/lib/chords/database";
 
 export interface PdfOptions {
   title?: string;
@@ -35,7 +36,6 @@ export function generatePdfHtml(sheet: ChordSheet, options?: PdfOptions): string
   <hr>
   <div class="chord-line">
     ${sheet.progression.chords.map((c) => {
-      const { chordToString } = require("@/lib/chords/database");
       return `<span class="chord">${chordToString(c)}</span>`;
     }).join(" ")}
   </div>

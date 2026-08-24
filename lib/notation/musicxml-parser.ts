@@ -2,7 +2,7 @@ import type { ChordSheet, Chord } from "@/lib/chords/types";
 
 export function generateMusicXml(sheet: ChordSheet): string {
   const keyMap: Record<string, string> = {
-    C: "0", G: "1", D: "2", A: "3", E: "4", B: "5", "F": "6", "C": "7",
+    C: "0", G: "1", D: "2", A: "3", E: "4", B: "5", "F#": "6", "C#": "7",
     F: "-1", Bb: "-2", Eb: "-3", Ab: "-4", Db: "-5", Gb: "-6", Cb: "-7",
   };
 

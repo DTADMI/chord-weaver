@@ -15,8 +15,7 @@ const STANDARD_PROGRESSIONS: Record<string, Array<{ root: number; quality: Chord
 
 const MAJOR_SCALE: NoteName[] = ["C", "C", "D", "D", "E", "F", "F", "G", "G", "A", "A", "B"];
 const NOTE_SEMITONES: Record<string, number> = {
-  C: 0, "C": 1, D: 2, "D": 3, E: 4, F: 5,
-  "F": 6, G: 7, "G": 8, A: 9, "A": 10, B: 11,
+  C: 0, "C#": 1, D: 2, "D#": 3, E: 4, F: 5, "F#": 6, G: 7, "G#": 8, A: 9, "A#": 10, B: 11,
 };
 
 function getDegreeRoot(tonic: NoteName, degree: number): NoteName {

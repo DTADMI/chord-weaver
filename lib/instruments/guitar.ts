@@ -29,8 +29,8 @@ const A4 = 440;
 
 function noteToFrequency(note: NoteName, octave: number): number {
   const semitones: Record<string, number> = {
-    C: -9, "C": -8, D: -7, "D": -6, E: -5,
-    F: -4, "F": -3, G: -2, "G": -1, A: 0, "A": 1, B: 2,
+    C: -9, "C#": -8, D: -7, "D#": -6, E: -5,
+    F: -4, "F#": -3, G: -2, "G#": -1, A: 0, "A#": 1, B: 2,
   };
   const s = (semitones[note] ?? 0) + (octave - 4) * 12;
   return A4 * Math.pow(2, s / 12);
@@ -48,8 +48,7 @@ export function getGuitarTuning(): GuitarString[] {
 
 function getNoteSemitone(note: NoteName): number {
   const map: Record<string, number> = {
-    C: 0, "C": 1, D: 2, "D": 3, E: 4, F: 5,
-    "F": 6, G: 7, "G": 8, A: 9, "A": 10, B: 11,
+    C: 0, "C#": 1, D: 2, "D#": 3, E: 4, F: 5, "F#": 6, G: 7, "G#": 8, A: 9, "A#": 10, B: 11,
   };
   return map[note] ?? 0;
 }

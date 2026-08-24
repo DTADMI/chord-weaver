@@ -1,4 +1,5 @@
 import type { ChordSheet, Chord, ChordProgression } from "@/lib/chords/types";
+import { chordToString } from "@/lib/chords/database";
 
 export function parseChordPro(text: string): ChordSheet | null {
   try {
@@ -37,7 +38,6 @@ export function parseChordPro(text: string): ChordSheet | null {
 }
 
 export function toChordPro(sheet: ChordSheet): string {
-  const { chordToString } = require("@/lib/chords/database");
   let output = `{title: ${sheet.title}}\n`;
   if (sheet.artist) output += `{artist: ${sheet.artist}}\n`;
   output += `{key: ${sheet.progression.key}}\n`;
