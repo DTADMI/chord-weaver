@@ -51,7 +51,7 @@ Status Legend: 🎯 Active | ✅ Complete | ⏳ Pending | 🔄 In Progress | ❌
 | # | Task | Status | Notes |
 |---|------|--------|-------|
 | 3.1 | Piano finger positioning diagrams | ✅ | lib/instruments/piano.ts |
-| 3.2 | Guitar fretboard diagrams | ⏳ | |
+| 3.2 | Guitar fretboard diagrams | ✅ | lib/instruments/fretboard.ts + components/player/fretboard-display.tsx |
 | 3.3 | ML-based chord detection improvement | ⏳ | |
 | 3.4 | URL extraction (YouTube/SoundCloud) | ⏳ | |
 | 3.5 | Microphone recording input | ⏳ | |
