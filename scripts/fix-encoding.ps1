@@ -1,4 +1,4 @@
-param([string]$Path = ".\lib\i18n\translations")
+﻿param([string]$Path = ".\lib\i18n\translations")
 
 Write-Host "Fixing encoding for files in $Path..." -ForegroundColor Cyan
 

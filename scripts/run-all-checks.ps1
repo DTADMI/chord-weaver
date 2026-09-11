@@ -1,4 +1,4 @@
-Write-Host "=== Running All Checks ===" -ForegroundColor Cyan
+﻿Write-Host "=== Running All Checks ===" -ForegroundColor Cyan
 
 Write-Host "[1/4] Typecheck..." -ForegroundColor Yellow
 pnpm typecheck; if (-not $?) { exit 1 }
