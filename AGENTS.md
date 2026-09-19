@@ -20,7 +20,7 @@
 ## Project Info
 
 - **Name**: chord-weaver
-- **Description**: Convert songs to chords and chords to audio — a bidirectional music notation tool
+- **Description**: Convert songs to chords and chords to audio - a bidirectional music notation tool
 - **Tech**: Next.js 16 (App Router), React 19, TypeScript 5.9, Tailwind CSS v4, pnpm 10.33.4, Node 22.22.3
 - **Port**: 3025
 

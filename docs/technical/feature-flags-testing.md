@@ -1,6 +1,6 @@
 <!-- CLUSTER-C CANONICAL: NF-root rules. Project-specific delta below. -->
 > **Canonical rules/process**: `../../../docs/technical/feature-flags-testing.md` (NF root). This doc keeps project-specific values/catalog only.
-# Chord Weaver — Feature Flags & Testing Guide
+# Chord Weaver - Feature Flags & Testing Guide
 
 ## Flag Categories
 

@@ -7,7 +7,7 @@ export default function HomePage() {
       <p className="mb-12 max-w-2xl text-center text-lg text-stone-600 dark:text-stone-400">
         Weave audio into chords, chords into sound.
         <br />
-        Upload, record, or search any song — get instant chord sheets, instrument fingerings, and
+        Upload, record, or search any song - get instant chord sheets, instrument fingerings, and
         audio playback.
       </p>
 

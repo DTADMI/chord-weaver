@@ -1,6 +1,6 @@
 <!-- CLUSTER-C CANONICAL: NF-root rules. Project-specific delta below. -->
 > **Canonical rules/process**: `../../../docs/technical/performance-optimization.md` (NF root). This doc keeps project-specific values/catalog only.
-# Chord Weaver — Performance Optimization Strategy
+# Chord Weaver - Performance Optimization Strategy
 
 ## SSR Strategy
 

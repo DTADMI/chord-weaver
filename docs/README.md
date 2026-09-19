@@ -1,4 +1,4 @@
-# Chord Weaver — Bidirectional Chord/Song/Audio Converter
+# Chord Weaver - Bidirectional Chord/Song/Audio Converter
 
 **Owner:** Nebula Forge Digital Studio  
 **Last Updated:** 2025-07-16  

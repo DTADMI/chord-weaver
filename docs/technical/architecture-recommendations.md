@@ -1,4 +1,4 @@
-# Chord Weaver — Architecture Recommendations
+# Chord Weaver - Architecture Recommendations
 
 ## Name Recommendation: **Chord Weaver**
 

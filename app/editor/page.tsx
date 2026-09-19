@@ -35,7 +35,7 @@ export default function EditorPage() {
 
       <div className="rounded-xl border border-stone-200 bg-white p-8 dark:border-stone-700 dark:bg-stone-800">
         <div className="flex items-center justify-center" style={{ minHeight: 300 }}>
-          <span className="text-stone-400">Editor canvas — VexFlow rendering coming soon</span>
+          <span className="text-stone-400">Editor canvas - VexFlow rendering coming soon</span>
         </div>
       </div>
     </main>

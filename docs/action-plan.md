@@ -1,4 +1,4 @@
-# Chord Weaver — Action Plan
+# Chord Weaver - Action Plan
 
 Status Legend: 🎯 Active | ✅ Complete | ⏳ Pending | 🔄 In Progress | ❌ Blocked
 
@@ -26,7 +26,7 @@ Status Legend: 🎯 Active | ✅ Complete | ⏳ Pending | 🔄 In Progress | ❌
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 1.1 | Supabase project + schema | ✅ | 001_core_schema.sql — saved_chords + user_preferences |
+| 1.1 | Supabase project + schema | ✅ | 001_core_schema.sql - saved_chords + user_preferences |
 | 1.2 | Auth pages (login/register) | ✅ | app/auth/ with Supabase email/password |
 | 1.3 | Landing page with converter tool UI | ✅ | app/converter/ + components/converter/ |
 | 1.4 | Basic audio upload component | ✅ | hooks/use-audio-recorder.ts |
