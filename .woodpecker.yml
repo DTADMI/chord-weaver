@@ -8,6 +8,9 @@ when:
 steps:
   validate:
     image: node:26
+    environment:
+      CI: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
     commands:
       - npm install -g pnpm@11.5.0
       - pnpm install --frozen-lockfile
@@ -18,6 +21,9 @@ steps:
   build:
     image: node:26
     depends_on: [validate]
+    environment:
+      CI: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
     commands:
       - npm install -g pnpm@11.5.0
       - pnpm build
