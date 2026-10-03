@@ -12,6 +12,8 @@ export default function ConverterPage() {
           <input
             type="text"
             placeholder="Search for a song by name..."
+            aria-label="Search for a song by name"
+            title="Search for a song by name, artist, or URL"
             className="rounded-lg border border-stone-300 px-4 py-3 dark:border-stone-600 dark:bg-stone-700"
           />
           <div className="flex gap-4">
