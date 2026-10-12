@@ -1,3 +1,6 @@
+// [PPR] route bloquante par defaut ; conversion incrementale
+export const instant = false;
+
 export default function EditorPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">

@@ -3,6 +3,9 @@ import type { ReactNode } from "react";
 import { I18nProvider } from "@/lib/i18n";
 import "./globals.css";
 
+// [PPR] route bloquante par defaut ; conversion incrementale
+export const instant = false;
+
 export const metadata: Metadata = {
   title: "Chord Weaver",
   description: "Convert songs to chords and chords to audio",

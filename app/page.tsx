@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+// [PPR] route bloquante par defaut ; conversion incrementale
+export const instant = false;
+
 export default function HomePage() {
   return (
     <main className="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-4 py-16">

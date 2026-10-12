@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Cache Components (PPR en Next 16) : coquille statique + contenu dynamique diffuse.
+  cacheComponents: true,
   // En-tetes de securite (NF, ajoutes par scripts/fix-security-headers.mjs).
   // La CSP est en mode RAPPORT SEULEMENT : elle observe sans bloquer, le temps de
   // verifier qu'aucune ressource legitime n'est refusee. La faire passer en mode
