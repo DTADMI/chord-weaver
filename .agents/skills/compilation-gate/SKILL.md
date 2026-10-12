@@ -1,3 +1,8 @@
+---
+name: compilation-gate
+description: Ensure every code batch is verified by the project's compiler(s) before being considered complete. Use when generating code, running scripts that produce code, or after any multi-file edit session.
+---
+
 # Compilation Gate - Skill
 
 **Owner:** Nebula Forge Digital Studio
