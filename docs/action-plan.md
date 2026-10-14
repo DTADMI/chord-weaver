@@ -54,7 +54,7 @@ Status Legend: 🎯 Active | ✅ Complete | ⏳ Pending | 🔄 In Progress | ❌
 | 3.2 | Guitar fretboard diagrams | ✅ | lib/instruments/fretboard.ts + components/player/fretboard-display.tsx |
 | 3.3 | ML-based chord detection improvement | ⏳ | |
 | 3.4 | URL extraction (YouTube/SoundCloud) | ⏳ | |
-| 3.5 | Microphone recording input | ⏳ | |
+| 3.5 | Microphone recording input | ✅ Done 2026-10-13 | `hooks/use-audio-recorder.ts` (getUserMedia + MediaRecorder) etait ecrit mais **non câblé** ; la page convertisseur etait une maquette. Câblé dans `components/converter/converter-client.tsx` (bouton démarrer/arrêter, durée, lecture, effacer, message si contexte non sécurisé), tout en i18n (clés EN/FR), page convertisseur localisée ; typecheck 0, lint 0, build OK |
 
 ## Phase 4: Export & Polish
 
