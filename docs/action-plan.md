@@ -62,7 +62,7 @@ Status Legend: 🎯 Active | ✅ Complete | ⏳ Pending | 🔄 In Progress | ❌
 |---|------|--------|-------|
 | 4.1 | MusicXML export | ✅ | DEJA FAIT (verifie 2026-10-06) : `lib/notation/musicxml-parser.ts` expose `generateMusicXml(sheet)` |
 | 4.2 | ABC notation export | ✅ | DEJA FAIT (verifie 2026-10-06) : `lib/notation/abc-parser.ts` expose `toAbcNotation(sheet)` |
-| 4.3 | Audio download (MP3/WAV) | ⏳ | |
+| 4.3 | Audio download (MP3/WAV) | ✅ Done 2026-10-13 | Réutilise `audioBufferToWav` (`lib/audio/decode.ts`) : le convertisseur decode l'enregistrement et propose un **téléchargement WAV** (bouton dedie, etat d'attente, message d'erreur localisé). typecheck 0, lint 0, build OK |
 | 4.4 | User library | ⏳ | |
 | 4.5 | Community sharing | ⏳ | |
 | 4.6 | Mobile optimization | ⏳ | |

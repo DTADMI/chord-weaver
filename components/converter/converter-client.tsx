@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { useTranslation } from "@/lib/i18n";
 import { useAudioRecorder } from "@/hooks/use-audio-recorder";
+import { audioBufferToWav } from "@/lib/audio/decode";
 
 /**
  * ConverterClient - the converter surface.
@@ -15,9 +16,33 @@ import { useAudioRecorder } from "@/hooks/use-audio-recorder";
  */
 export function ConverterClient() {
   const { t } = useTranslation();
-  const { isRecording, duration, audioUrl, error, startRecording, stopRecording, reset } =
+  const { isRecording, duration, audioBlob, audioUrl, error, startRecording, stopRecording, reset } =
     useAudioRecorder();
   const [localError, setLocalError] = useState<string | null>(null);
+  const [isConverting, setIsConverting] = useState(false);
+
+  const downloadWav = async () => {
+    if (!audioBlob) return;
+    setLocalError(null);
+    setIsConverting(true);
+    try {
+      const arrayBuffer = await audioBlob.arrayBuffer();
+      const ctx = new AudioContext();
+      const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
+      await ctx.close();
+      const wav = audioBufferToWav(audioBuffer);
+      const url = URL.createObjectURL(wav);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `chord-recording-${Date.now()}.wav`;
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch {
+      setLocalError(t("converter.input.downloadFailed"));
+    } finally {
+      setIsConverting(false);
+    }
+  };
 
   const formatDuration = (seconds: number) => {
     const m = Math.floor(seconds / 60);
@@ -96,13 +121,24 @@ export function ConverterClient() {
             <div className="flex flex-col gap-2">
               <span className="text-sm font-medium">{t("converter.input.recordedLabel")}</span>
               <audio controls src={audioUrl} className="w-full" />
-              <button
-                type="button"
-                onClick={reset}
-                className="self-start rounded-lg border border-stone-300 px-4 py-2 text-sm hover:bg-stone-50 dark:border-stone-600 dark:hover:bg-stone-700"
-              >
-                {t("converter.input.clearLabel")}
-              </button>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  onClick={downloadWav}
+                  disabled={isConverting}
+                  aria-busy={isConverting}
+                  className="rounded-lg border border-stone-300 px-4 py-2 text-sm hover:bg-stone-50 disabled:opacity-50 dark:border-stone-600 dark:hover:bg-stone-700"
+                >
+                  {t("converter.input.downloadLabel")}
+                </button>
+                <button
+                  type="button"
+                  onClick={reset}
+                  className="rounded-lg border border-stone-300 px-4 py-2 text-sm hover:bg-stone-50 dark:border-stone-600 dark:hover:bg-stone-700"
+                >
+                  {t("converter.input.clearLabel")}
+                </button>
+              </div>
             </div>
           )}
         </div>

@@ -59,6 +59,8 @@ const fr: Translations = {
       recordedLabel: "Audio enregistré",
       recordUnsupported: "L'enregistrement exige un contexte sécurisé (https ou localhost) avec accès au microphone.",
       clearLabel: "Effacer l'enregistrement",
+      downloadLabel: "Télécharger en WAV",
+      downloadFailed: "Impossible de convertir l'enregistrement en WAV dans ce navigateur.",
       resultsEmpty: "Les résultats apparaîtront ici",
     },
     processing: {
