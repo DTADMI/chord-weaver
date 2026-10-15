@@ -65,4 +65,4 @@ Status Legend: 🎯 Active | ✅ Complete | ⏳ Pending | 🔄 In Progress | ❌
 | 4.3 | Audio download (MP3/WAV) | ✅ Done 2026-10-13 | Réutilise `audioBufferToWav` (`lib/audio/decode.ts`) : le convertisseur decode l'enregistrement et propose un **téléchargement WAV** (bouton dedie, etat d'attente, message d'erreur localisé). typecheck 0, lint 0, build OK |
 | 4.4 | User library | ⏳ | |
 | 4.5 | Community sharing | ⏳ | |
-| 4.6 | Mobile optimization | ⏳ | |
+| 4.6 | Mobile optimization | ✅ Verifie 2026-10-13 | Premiere couverture e2e du projet (`tests/e2e/mobile.spec.ts`) : 3 pages (accueil, editeur, convertisseur) a **320 px** - aucun debordement, aucun controle rogne, et toutes les cibles tactiles >= 24x24 px (WCAG 2.2 AA). Garde-fou permanent ajoute. |
